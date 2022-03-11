@@ -1,4 +1,4 @@
-package com.proyectoappdistr.webappservices;
+package com.proyectoappdis.webappservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
