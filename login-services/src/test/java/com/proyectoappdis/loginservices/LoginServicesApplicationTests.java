@@ -1,4 +1,4 @@
-package com.proyectoappdistr.loginservices;
+package com.proyectoappdis.loginservices;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
