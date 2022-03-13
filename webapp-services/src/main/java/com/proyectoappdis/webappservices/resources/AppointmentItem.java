@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/Cita")
 public class AppointmentItem {
     @RequestMapping("/{UserID}")
-    public Appointment getAppointmentInfo(@PathVariable("UserID")){
+    public Appointment getAppointmentInfo(@PathVariable("UserID") String UserID){
     
         return new Appointment(1,1,"Listo para la cita","12/12/2021 23:12");
     
