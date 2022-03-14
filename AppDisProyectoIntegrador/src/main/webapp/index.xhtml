@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login del Usuario</title>
+        <link href="resources/Css/index.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body id="principal">
+        <div id="cuadro">
+
+            <h:form>
+                <p:messages id="messages" showDetail="true" closable="true"/>
+                <p id="titulo">Login</p>
+                <p:autoUpdate />
+                <hr/>
+                <p:outputLabel for="txtEmail" id="subtitulo1" >Email</p:outputLabel>
+                    <br/>
+                    <p:inputText id="txtEmail" value="#{UserItem.email}" class="entrada" required="true" requiredMessage="Email incorrecto" validatorMessage="El correo es incorrecto"/>
+                <p:message for="txtEmail"/>
+                <br/>
+                <p:outputLabel for="txtPassword" id="subtitulo2" >Clave</p:outputLabel>
+                    <br/>
+                <p:password id="txtPassword" value="#{contrasena}" class="entrada" required="true" requiredMessage="Contraseña requerida" validatorMessage="La contraseña es incorrecta">
+                </p:password>
+                <br/>
+                <h:message for="txtPassword"/>
+                <br/>
+                <br/>
+                <p:commandButton value="Acceder" action="#{WebService.Login(UserItem.email)}" id="boton"/>
+
+
+                <br/>
+                <p:separator/>  
+                <p:link outcome="Registro" value="No tienes cuenta? Registrate" />
+                <br/>
+                <br/>
+                <p:link outcome="RecuperarClave" value="Olvidaste tu clave? Clic para recuperar clave" />
+            </h:form>
+        </div>
+        <br />
+    </h:body>
+
+</html>
+

@@ -8,13 +8,13 @@ package com.proyectoappdis.webappservices.models;
  *
  * @author jlavayen
  */
-public class Appointment {
+public class WebServicesItem {
     private int AppointmentID;
     private int UserID;
     private String AppDescription;
     private String AppDate;
 
-    public Appointment(int AppointmentID, int UserID, String AppDescription, String AppDate) {
+    public WebServicesItem(int AppointmentID, int UserID, String AppDescription, String AppDate) {
         this.AppointmentID = AppointmentID;
         this.UserID = UserID;
         this.AppDescription = AppDescription;

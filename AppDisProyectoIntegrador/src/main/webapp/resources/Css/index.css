@@ -1,0 +1,87 @@
+#principal{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+#principal2{
+    width: 1024px;
+    margin:  auto;
+}
+
+body{
+    background: url(../imagenes/fondito.jpg);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    
+}
+
+#fondo{
+    background: url(../imagenes/fondop.jpg);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+#cuadro{
+    margin: 200px auto;
+    width: 40% ;
+    text-align: center;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px 5px 30px 5px;
+    border-top: 25px solid #3D4D66;
+    border-left: 25px solid #3D4D66;
+    border-right: 25px solid #3D4D66;
+    border-bottom: 25px solid #3D4D66;
+    border-radius: 6px;
+}
+
+#cuadro2{
+    margin: auto;
+    margin-top: 120px;
+    width: 330px ;
+    text-align: center;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px 5px 30px 5px;
+    border-top: 25px solid #3D4D66;
+    border-left: 25px solid #3D4D66;
+    border-right: 25px solid #3D4D66;
+    border-bottom: 25px solid #3D4D66;
+    border-radius: 6px;
+}
+
+
+.entrada{
+    width: 220px;
+    height: 35px;
+    border-radius: 6px;
+    font-family: verdana; 
+    
+}
+
+#boton{
+    width: 324px;
+    height: 45x;
+    border-radius: 6px;
+    background: blue;
+    color: #ffffff;
+    font-size: 30px; 
+}
+
+#titulo{
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+#subtitulo1{
+    padding-left: 80px;
+}
+
+#subtitulo2{
+    padding-left: 107px;
+}
+
+
+

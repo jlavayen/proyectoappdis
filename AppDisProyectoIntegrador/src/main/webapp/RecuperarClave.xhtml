@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Recuperar Clave</title>
+        <link href="resources/Css/index.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body id="fondo">
+        <div id="principal2">
+            <div id="cuadro2">
+        <h:form>
+            <p id="titulo">Recuperacion de clave</p>
+            <hr/>
+            <p:outputLabel for="txtUsuario" id="subtitulo1" > Ingrese el usuario que desea recuperar </p:outputLabel>
+            <br/>
+            <p:inputText id="txtUsuario" value="#{mbUsuario.usuarios.email}" class="entrada" required="true" requiredMessage="Usuario incorrecto"/>
+                <br/>
+                <p:message for="txtUsuario"/>
+                <p:autoUpdate />
+                <br/>
+                 <h:commandButton value="Recuperar" action="submit"/>
+                 
+            <br/>
+            <h:link outcome="index" value="Clic para regresar al Login" />
+        </h:form>
+                </div>
+            </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <f:event type="preRenderView" listener="#{mbSesion.verificarSesion()}"/>
+    <h:head>
+       <link href="resources/Css/menu.css" rel="stylesheet" type="text/css"/>     
+    </h:head>
+    <h:body>
+        
+       <ui:decorate template="PlantillaPrincipal.xhtml">
+       <ui:define name="title">Carrito de Compras</ui:define>
+
+       <ui:define name="contenido">
+           
+           <center><div id="Titulo">Carrito de Compras</div></center> 
+           <h:form id="Pago">
+            <p:growl id="growl" showDetail="true" sticky="false" />  
+           <p:layout style="min-width:400px;min-height:760px;height: 100%">
+               <p:layoutUnit position="east" resizable="true" style="min-width:250px;max-height:200px;" >
+                   
+                   <div>
+                       <div>
+                           <div><p:outputLabel value="SubTotal(#{mbPedidos.detCarrito.get(0)} Productos):"/> <center><h1><p:outputLabel value="$ #{mbPedidos.detCarrito.get(1)}"/></h1></center></div>
+               </div>
+                </div>
+                       
+                   <br>
+                       <center> <p:commandButton value="Confirmar pago" oncomplete="PF('dlgpago').show()" 
+                              update="Pago"/></center></br>
+                       
+                    </p:layoutUnit>
+ 
+               <p:layoutUnit position="center" style="border: none; background: none">                   
+            <p:dataGrid var="car" value="#{mbPedidos.carrito}" columns="2" style="background: none">
+            <p:dataViewGridItem>
+            <p:panel style="text-align:left;" >
+                <h:panelGrid columns="3" columnClasses="logo,detail" styleClass="ui-panelgrid-content">
+                <p:graphicImage height="200px" width="200px" alt="Image not found" url="resources/imagenes/#{mbProducto.images(car.get(4))}"/> 
+                <p:outputPanel>
+                    <h:panelGrid columns="2" cellpadding="5" style="width:100%">
+                        <h:outputText value="Nombre:" />
+                        <h:outputText value="#{car.get(1)}" style="font-weight: bold"/>
+                        <h:outputText value="Descripcion:" />
+                        <h:outputText value="#{car.get(2)}" style="font-weight: bold"/>
+                        <h:outputText value="Precio:" />
+                        <h:outputText value="$ #{car.get(3)}" style="font-weight: bold"/>
+                    </h:panelGrid>
+                </p:outputPanel>
+                <p:commandButton value="Quitar" action="#{mbPedidos.eliminar(car.get(0))}" update="Pago" style="margin:0 auto;"/>
+                </h:panelGrid>
+                </p:panel>
+        </p:dataViewGridItem>
+                        </p:dataGrid>
+                
+                    </p:layoutUnit>
+               
+                </p:layout>
+           </h:form>
+           
+           
+         <p:dialog id="dlgPago" minWidth="200" header="Confirmar Envio" 
+                  modal="true" resizable="false" widgetVar="dlgpago">
+            
+            <h:form id="frmPago">
+                <p:outputLabel value="Sector: " style="align-content: center"/>
+                <p:selectOneMenu value="#{mbPrecio.valor}" > 
+                    <f:selectItem itemLabel="Seleccione su Sector..." itemValue="#{null}" noSelectionOption="true" itemDisabled="true" />
+                    <f:selectItems value="#{mbPrecio.preciosLst}" var="pre" itemValue="#{pre.valor}" itemLabel="#{pre.sector}"/>
+                    <p:ajax update="panel" />
+                 </p:selectOneMenu>
+                <center> <p:panelGrid id="panel" columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid">
+                    <p:outputLabel value="Subtotal"/>
+                    <p:outputLabel value="$ #{mbPedidos.detCarrito.get(1)}"/>
+                    <p:outputLabel value="Iva"/>
+                    <p:outputLabel value="$ #{mbPedidos.detCarrito.get(3)}"/>
+                    <p:outputLabel value="Envio"/>
+                    <p:outputLabel value="$ #{mbPrecio.valor.doubleValue()}"/>
+                    <p:outputLabel value="Total"/>
+                    <p:outputLabel value="$ #{mbPedidos.detCarrito.get(2)+ mbPrecio.valor.doubleValue()}"/>
+
+                </p:panelGrid>
+                </center>
+                <p:commandButton value="Confirmar pago" action="#{mbPedidos.registrarEnvio(mbPrecio.valor)}"
+                                 oncomplete="PF('dlgpago').hide()" update="Pago"/> 
+            </h:form>
+        </p:dialog>
+
+        </ui:define>
+       </ui:decorate>
+        
+        
+    </h:body>
+</html>
+

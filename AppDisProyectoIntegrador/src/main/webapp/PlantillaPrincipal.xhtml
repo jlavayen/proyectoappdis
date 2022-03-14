@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Bienvenido</ui:insert></title>
+                
+    </h:head>
+    
+    <h:body>
+                <h:form>
+                    <p:menubar>
+                    <p:menuitem value="Inicio" icon="ui-icon-home" outcome="AccesoOk.xhtml" />
+           
+                <p:submenu label="Pedidos" icon="ui-icon-pencil">
+                    <p:menuitem value="En transito" outcome="TablaTransitoUsuario.xhtml" />
+                    <p:menuitem value="Historial" outcome="Pedidos.xhtml" />
+                </p:submenu>
+
+                    <p:submenu label="Bienvenido, #{mbUsuario.presentarPerfil().nombrecliente}" icon="ui-icon-person">
+                    <p:menuitem value="Consultar Facturas" outcome="Factura.xhtml"/>
+                    <p:menuitem value="Carrito de compras" outcome="Carrito.xhtml" />
+                    <p:menuitem value="Editar Perfil" outcome="PerfilUsuario" />
+                </p:submenu>
+                    
+                <p:submenu label="Opciones Administrativas" icon="ui-icon-config" rendered="#{mbUsuario.opciones()}">
+                    <p:menuitem value="Actualizar Envios" outcome="TablaTransito.xhtml" />
+                    <p:menuitem value="Editar Productos" outcome="TablaProductos.xhtml"/>
+                    <p:menuitem value="Editar Usuario" outcome="TablaUsuarios.xhtml"/>
+                </p:submenu>
+            
+                <f:facet name="options">
+               
+                <div class="ui-input-icon-left p-mr-2">
+                    <p:button value="Salir" styleClass="ui-button-info" outcome="index"/>
+                </div>
+            </f:facet>
+            </p:menubar>
+           
+             </h:form>
+
+       
+        <div>
+                <ui:insert name="contenido">Default Body</ui:insert>
+        </div>
+        
+    </h:body>
+
+</html>

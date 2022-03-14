@@ -1,0 +1,84 @@
+#principal{
+    width: 1024px;
+    margin: 0 auto;
+}
+
+#principal3{
+    width: 1024px;
+    margin:  auto;
+}
+
+body{
+    background: url(../imagenes/comida2.jpg);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    
+}
+
+#fondo1{
+    background: url(../imagenes/fondop.jpg);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+#cuadro{
+    margin: 200px auto;
+    width: 40% ;
+    text-align: center;
+    background: #F8C875;
+    color: #000000;
+    padding: 5px 5px 30px 5px;
+    border-top: 25px solid #805A3B;
+    border-left: 25px solid #805A3B;
+    border-right: 25px solid #805A3B;
+    border-bottom: 25px solid #805A3B;
+    border-radius: 6px;
+}
+
+#cuadro3{
+    margin: auto;
+    margin-top: 120px;
+    width: 330px ;
+    text-align: center;
+    background: #F8C875;
+    color: #000000;
+    padding: 5px 5px 30px 5px;
+    border-top: 25px solid #805A3B;
+    border-left: 25px solid #805A3B;
+    border-right: 25px solid #805A3B;
+    border-bottom: 25px solid #805A3B;
+    border-radius: 6px;
+}
+
+
+.entradas{
+    width: 220px;
+    height: 35px;
+    border-radius: 6px;
+    font-family: verdana; 
+    
+}
+
+#boton{
+    width: 324px;
+    height: 45x;
+    border-radius: 6px;
+    background: blue;
+    color: #ffffff;
+    font-size: 30px; 
+}
+
+#titulos{
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+#subtitulo1{
+    padding-left: 80px;
+}
+
+#subtitulo3{
+    padding-left: 107px;
+}
